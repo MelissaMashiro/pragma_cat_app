@@ -24,7 +24,7 @@ import '../core.dart';
 abstract class Injector {
   Stream<bool> get initializationStream;
 
-  CatsListBloc get soccerboardBloc;
+  CatsListBloc get catsListBloc;
 
   GlobalKey<NavigatorState> get navigatorKey;
 
@@ -54,7 +54,7 @@ class DefaultInjector implements Injector {
       _initializationStreamController.stream;
 
   @override
-  CatsListBloc get soccerboardBloc => CatsListBloc(
+  CatsListBloc get catsListBloc => CatsListBloc(
         catsListUseCase: _liveMatchsListUseCase,
       );
 
@@ -87,24 +87,24 @@ class DefaultInjector implements Injector {
 
       _logger.finest('Creating repositories…');
 
-      final soccerboardRemoteDataSource = CatAppRemoteDatasourceImpl(
+      final catAppRemoteDataSource = CatAppRemoteDatasourceImpl(
         apikey: _config.apiKey,
         host: _config.host,
         endpoints: _config.endpoints,
         networkClient: networkClient,
       );
 
-      final soccerboardLocalDataSource =
+      final catAppLocalDataSource =
           CatAppLocalDatasourceImpl(database: _database);
 
-      final soccerboardRepository = CatAppRepositoryImpl(
+      final catAppRepository = CatAppRepositoryImpl(
         networkInfo: networkInfo,
-        catAppLocalDataSource: soccerboardLocalDataSource,
-        catAppRemoteDataSource: soccerboardRemoteDataSource,
+        catAppLocalDataSource: catAppLocalDataSource,
+        catAppRemoteDataSource: catAppRemoteDataSource,
       );
 
       _liveMatchsListUseCase = CatsListUseCase(
-        catAppRepository: soccerboardRepository,
+        catAppRepository: catAppRepository,
       );
 
       _initialized = true;

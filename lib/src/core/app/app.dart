@@ -49,16 +49,7 @@ class _AppState extends State<App> {
                 value: _injector,
               ),
             ],
-            child: result,
-            // child: MultiBlocProvider(
-            //   providers:  [
-            //     //En caso de querer iniciar el bloc desde aqui
-            //     BlocProvider.value(
-            //       value: _injector.soccerboardBloc,
-            //     ),
-            //   ],
-            //   child: result,
-            // ),
+            child: result, 
           );
         }
 
