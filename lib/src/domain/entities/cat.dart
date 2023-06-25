@@ -2,9 +2,6 @@ class Cat {
   final Weight weight;
   final String id;
   final String name;
-  final String cfaUrl;
-  final String vetstreetUrl;
-  final String vcahospitalsUrl;
   final String temperament;
   final String origin;
   final String countryCodes;
@@ -12,8 +9,8 @@ class Cat {
   final String description;
   final String lifeSpan;
   final int indoor;
-  final int lap;
-  final String altNames;
+  final int? lap;
+  final String? altNames;
   final int adaptability;
   final int affectionLevel;
   final int childFriendly;
@@ -33,17 +30,13 @@ class Cat {
   final int rex;
   final int suppressedTail;
   final int shortLegs;
-  final String wikipediaUrl;
   final int hypoallergenic;
-  final String referenceImageId;
+  final String? referenceImageId;
 
   Cat({
     required this.weight,
     required this.id,
     required this.name,
-    required this.cfaUrl,
-    required this.vetstreetUrl,
-    required this.vcahospitalsUrl,
     required this.temperament,
     required this.origin,
     required this.countryCodes,
@@ -72,7 +65,6 @@ class Cat {
     required this.rex,
     required this.suppressedTail,
     required this.shortLegs,
-    required this.wikipediaUrl,
     required this.hypoallergenic,
     required this.referenceImageId,
   });
@@ -83,9 +75,6 @@ class Cat {
         weight: Weight.fromJson(json['weight']),
         id: json['id'],
         name: json['name'],
-        cfaUrl: json['cfa_url'],
-        vetstreetUrl: json['vetstreet_url'],
-        vcahospitalsUrl: json['vcahospitals_url'],
         temperament: json['temperament'],
         origin: json['origin'],
         countryCodes: json['country_codes'],
@@ -114,7 +103,6 @@ class Cat {
         rex: json['rex'],
         suppressedTail: json['suppressed_tail'],
         shortLegs: json['short_legs'],
-        wikipediaUrl: json['wikipedia_url'],
         hypoallergenic: json['hypoallergenic'],
         referenceImageId: json['reference_image_id'],
       );
@@ -138,9 +126,6 @@ class Cat {
         'weight': weight.toJson(),
         'id': id,
         'name': name,
-        'cfa_url': cfaUrl,
-        'vetstreet_url': vetstreetUrl,
-        'vcahospitals_url': vcahospitalsUrl,
         'temperament': temperament,
         'origin': origin,
         'country_codes': countryCodes,
@@ -169,7 +154,6 @@ class Cat {
         'rex': rex,
         'suppressed_tail': suppressedTail,
         'short_legs': shortLegs,
-        'wikipedia_url': wikipediaUrl,
         'hypoallergenic': hypoallergenic,
         'reference_image_id': referenceImageId,
       };

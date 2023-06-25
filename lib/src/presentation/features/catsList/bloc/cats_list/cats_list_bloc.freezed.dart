@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CatsListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
     required TResult Function(List<Cat> catsList) completed,
     required TResult Function() error,
     required TResult Function() initial,
@@ -27,7 +26,6 @@ mixin _$CatsListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
     TResult? Function(List<Cat> catsList)? completed,
     TResult? Function()? error,
     TResult? Function()? initial,
@@ -36,7 +34,6 @@ mixin _$CatsListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
     TResult Function(List<Cat> catsList)? completed,
     TResult Function()? error,
     TResult Function()? initial,
@@ -46,7 +43,6 @@ mixin _$CatsListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_Completed value) completed,
     required TResult Function(_Error value) error,
     required TResult Function(_Initial value) initial,
@@ -55,7 +51,6 @@ mixin _$CatsListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_Completed value)? completed,
     TResult? Function(_Error value)? error,
     TResult? Function(_Initial value)? initial,
@@ -64,7 +59,6 @@ mixin _$CatsListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_Completed value)? completed,
     TResult Function(_Error value)? error,
     TResult Function(_Initial value)? initial,
@@ -90,126 +84,6 @@ class _$CatsListStateCopyWithImpl<$Res, $Val extends CatsListState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$_LoadInProgressCopyWith<$Res> {
-  factory _$$_LoadInProgressCopyWith(
-          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
-      __$$_LoadInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LoadInProgressCopyWithImpl<$Res>
-    extends _$CatsListStateCopyWithImpl<$Res, _$_LoadInProgress>
-    implements _$$_LoadInProgressCopyWith<$Res> {
-  __$$_LoadInProgressCopyWithImpl(
-      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_LoadInProgress implements _LoadInProgress {
-  const _$_LoadInProgress();
-
-  @override
-  String toString() {
-    return 'CatsListState.loadInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
-    required TResult Function(List<Cat> catsList) completed,
-    required TResult Function() error,
-    required TResult Function() initial,
-    required TResult Function() loading,
-  }) {
-    return loadInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
-    TResult? Function(List<Cat> catsList)? completed,
-    TResult? Function()? error,
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-  }) {
-    return loadInProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
-    TResult Function(List<Cat> catsList)? completed,
-    TResult Function()? error,
-    TResult Function()? initial,
-    TResult Function()? loading,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-  }) {
-    return loadInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-  }) {
-    return loadInProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Error value)? error,
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadInProgress implements CatsListState {
-  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 /// @nodoc
@@ -282,7 +156,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
     required TResult Function(List<Cat> catsList) completed,
     required TResult Function() error,
     required TResult Function() initial,
@@ -294,7 +167,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
     TResult? Function(List<Cat> catsList)? completed,
     TResult? Function()? error,
     TResult? Function()? initial,
@@ -306,7 +178,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
     TResult Function(List<Cat> catsList)? completed,
     TResult Function()? error,
     TResult Function()? initial,
@@ -322,7 +193,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_Completed value) completed,
     required TResult Function(_Error value) error,
     required TResult Function(_Initial value) initial,
@@ -334,7 +204,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_Completed value)? completed,
     TResult? Function(_Error value)? error,
     TResult? Function(_Initial value)? initial,
@@ -346,7 +215,6 @@ class _$_Completed implements _Completed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_Completed value)? completed,
     TResult Function(_Error value)? error,
     TResult Function(_Initial value)? initial,
@@ -405,7 +273,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
     required TResult Function(List<Cat> catsList) completed,
     required TResult Function() error,
     required TResult Function() initial,
@@ -417,7 +284,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
     TResult? Function(List<Cat> catsList)? completed,
     TResult? Function()? error,
     TResult? Function()? initial,
@@ -429,7 +295,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
     TResult Function(List<Cat> catsList)? completed,
     TResult Function()? error,
     TResult Function()? initial,
@@ -445,7 +310,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_Completed value) completed,
     required TResult Function(_Error value) error,
     required TResult Function(_Initial value) initial,
@@ -457,7 +321,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_Completed value)? completed,
     TResult? Function(_Error value)? error,
     TResult? Function(_Initial value)? initial,
@@ -469,7 +332,6 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_Completed value)? completed,
     TResult Function(_Error value)? error,
     TResult Function(_Initial value)? initial,
@@ -524,7 +386,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
     required TResult Function(List<Cat> catsList) completed,
     required TResult Function() error,
     required TResult Function() initial,
@@ -536,7 +397,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
     TResult? Function(List<Cat> catsList)? completed,
     TResult? Function()? error,
     TResult? Function()? initial,
@@ -548,7 +408,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
     TResult Function(List<Cat> catsList)? completed,
     TResult Function()? error,
     TResult Function()? initial,
@@ -564,7 +423,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_Completed value) completed,
     required TResult Function(_Error value) error,
     required TResult Function(_Initial value) initial,
@@ -576,7 +434,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_Completed value)? completed,
     TResult? Function(_Error value)? error,
     TResult? Function(_Initial value)? initial,
@@ -588,7 +445,6 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_Completed value)? completed,
     TResult Function(_Error value)? error,
     TResult Function(_Initial value)? initial,
@@ -643,7 +499,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadInProgress,
     required TResult Function(List<Cat> catsList) completed,
     required TResult Function() error,
     required TResult Function() initial,
@@ -655,7 +510,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadInProgress,
     TResult? Function(List<Cat> catsList)? completed,
     TResult? Function()? error,
     TResult? Function()? initial,
@@ -667,7 +521,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadInProgress,
     TResult Function(List<Cat> catsList)? completed,
     TResult Function()? error,
     TResult Function()? initial,
@@ -683,7 +536,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_Completed value) completed,
     required TResult Function(_Error value) error,
     required TResult Function(_Initial value) initial,
@@ -695,7 +547,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_Completed value)? completed,
     TResult? Function(_Error value)? error,
     TResult? Function(_Initial value)? initial,
@@ -707,7 +558,6 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_Completed value)? completed,
     TResult Function(_Error value)? error,
     TResult Function(_Initial value)? initial,

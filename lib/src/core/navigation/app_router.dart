@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../presentation/features/catDetails/cat_details_screen.dart';
 import '../../presentation/features/catsList/cats_list_screen.dart';
 import '../core.dart';
 
@@ -14,6 +15,16 @@ class AppRouter {
           case NamedRoute.catAppHome:
             route = MaterialPageRoute(
               builder: (_) => const CatsListScreen(),
+              settings: RouteSettings(
+                name: settings.name,
+              ),
+            );
+            break;
+          case NamedRoute.catDetails:
+            route = MaterialPageRoute(
+              builder: (_) => CatDetailsScreen(
+                catDetails: argumentsMap!['catDetails'],
+              ),
               settings: RouteSettings(
                 name: settings.name,
               ),
