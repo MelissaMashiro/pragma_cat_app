@@ -35,7 +35,6 @@ dependencies:
   connectivity_plus: ^3.0.1
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
-  dio: ^4.0.6
   flutter_bloc: ^8.1.1
   freezed_annotation: ^2.1.0
   http: ^0.13.5
