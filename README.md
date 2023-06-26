@@ -1,16 +1,20 @@
 # pragma_cat_app
 
-A new Flutter project.
+A technical flutter test for Pragma company.
+By Melissa Alvarez
 
-## Getting Started
+## SKILLS USED
 
-This project is a starting point for a Flutter application.
+- Clean Arqutiecture
+- Dependency Injection
+- Repository pattern
+- SOLID principles
+- Local Database
+- State management with BloC
+- Sealed classes
+- Unit testing
 
-A few resources to get you started if this is your first Flutter project:
+## DEMO VIDEO
+https://drive.google.com/file/d/1VuGDYUIkqGahiovustO40KKypkgEDtXI/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ 
