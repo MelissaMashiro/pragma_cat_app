@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../presentation/features/catDetails/cat_details_screen.dart';
 import '../../presentation/features/catsList/cats_list_screen.dart';
+import '../../presentation/features/splashscreen/splash_screen.dart';
 import '../core.dart';
 
 class AppRouter {
@@ -12,7 +13,15 @@ class AppRouter {
         var argumentsMap = settings.arguments as Map<String, dynamic>?;
 
         switch (settings.name) {
-          case NamedRoute.catAppHome:
+          case NamedRoute.initial:
+            route = MaterialPageRoute(
+              builder: (_) => const SplashScreen(),
+              settings: RouteSettings(
+                name: settings.name,
+              ),
+            );
+            break;
+            case NamedRoute.catsList:
             route = MaterialPageRoute(
               builder: (_) => const CatsListScreen(),
               settings: RouteSettings(
@@ -23,7 +32,7 @@ class AppRouter {
           case NamedRoute.catDetails:
             route = MaterialPageRoute(
               builder: (_) => CatDetailsScreen(
-                catDetails: argumentsMap!['catDetails'],
+                cat: argumentsMap!['catDetails'],
               ),
               settings: RouteSettings(
                 name: settings.name,

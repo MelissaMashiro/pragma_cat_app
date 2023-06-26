@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   bloc: ^8.1.0
+  cached_network_image: ^3.2.3
   connectivity_plus: ^3.0.1
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
@@ -40,6 +41,7 @@ dependencies:
   http: ^0.13.5
   intl: ^0.17.0
   logging: ^1.1.0
+  lottie: ^2.3.0
   mocktail: ^0.3.0
   path: ^1.8.2
   provider: ^6.0.4

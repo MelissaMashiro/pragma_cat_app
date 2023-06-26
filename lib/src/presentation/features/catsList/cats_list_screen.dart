@@ -4,8 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/core.dart';
 import '../../../domain/entities/cat.dart';
 import '../../ui/error_screen.dart';
-import '../../ui/loading_screen.dart';
+import '../../ui/loading_cats_screen.dart/loading_screen.dart';
 import 'bloc/cats_list/cats_list_bloc.dart';
+import 'widgets/cat_card.dart';
 
 class CatsListScreen extends StatefulWidget {
   const CatsListScreen({super.key});
@@ -25,23 +26,17 @@ class _CatsListScreenState extends State<CatsListScreen> {
   Widget _buildBody(List<Cat> catsList) {
     Widget result = const SizedBox();
     if (catsList.isNotEmpty) {
-      result = ListView.builder(
-        itemCount: catsList.length,
-        itemBuilder: (context, index) {
-          final catito = catsList[index];
-          return InkWell(
-            onTap: () => Navigator.pushNamed(
-              context,
-              NamedRoute.catDetails,
-              arguments: {
-                'catDetails': catito,
-              },
-            ),
-            child: Container(
-              margin:const EdgeInsets.symmetric(vertical: 2.0,) ,
-              child: Text('CATITO => ${catito.name}')),
-          );
-        },
+      result = Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: ListView.builder(
+          itemCount: catsList.length,
+          itemBuilder: (context, index) {
+            final catito = catsList[index];
+            return CatCard(
+              catito: catito,
+            );
+          },
+        ),
       );
     }
     return result;

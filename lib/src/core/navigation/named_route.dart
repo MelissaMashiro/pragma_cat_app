@@ -1,4 +1,5 @@
 class NamedRoute {
-  static const catAppHome = '/';
+  static const initial = '/';
+  static const catsList= 'catsList';
   static const catDetails = 'catDetails';
 }

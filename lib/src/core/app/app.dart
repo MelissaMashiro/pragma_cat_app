@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../presentation/ui/loading_screen.dart';
+import '../../presentation/ui/loading_cats_screen.dart/loading_screen.dart';
 import '../core.dart';
 
 class App extends StatefulWidget {
