@@ -7,7 +7,7 @@ import '../../models/network/network_client.dart';
 import '../../models/request_models/cats_list_request.dart';
 
 abstract class CatAppRemoteDatasource {
-  Future<List<Cat>> getLiveMatched();
+  Future<List<Cat>> getCatsList();
 }
 
 class CatAppRemoteDatasourceImpl implements CatAppRemoteDatasource {
@@ -27,7 +27,7 @@ class CatAppRemoteDatasourceImpl implements CatAppRemoteDatasource {
   final NetworkClient _networkClient;
 
   @override
-  Future<List<Cat>> getLiveMatched() async {
+  Future<List<Cat>> getCatsList() async {
     final response = await _networkClient.get(
       CatsListRequest(
         apiKey: _apiKey,

@@ -15,10 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      print('future-->');
       Future.delayed(
-        const Duration(seconds: 3),
-        () => Navigator.pushNamed(
+        const Duration(seconds: 2),
+        () => Navigator.pushReplacementNamed(
           context,
           NamedRoute.catsList,
         ),

@@ -18,58 +18,72 @@ class CatsListScreen extends StatefulWidget {
 
 class _CatsListScreenState extends State<CatsListScreen> {
   late CatsListBloc _viewModel;
+  final TextEditingController _editingController = TextEditingController();
+
+  List<Cat> allCats = [];
+  ValueNotifier<List<Cat>> filteredCats = ValueNotifier<List<Cat>>([]);
+
   @override
   void initState() {
     _viewModel = context.read<Injector>().catsListBloc;
     super.initState();
   }
 
-  Widget _buildBody(List<Cat> catsList) {
+  void _filterSearchResults(String query) {
+    filteredCats.value = allCats
+        .where(
+          (item) => item.name.toLowerCase().contains(
+                query.toLowerCase(),
+              ),
+        )
+        .toList();
+  }
+
+  Widget _buildBody() {
     Widget result = const SizedBox();
-    if (catsList.isNotEmpty) {
+    if (filteredCats.value.isNotEmpty) {
       result = Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Column(
           children: [
-            Row(
-              children: [
-                Flexible(
-                  child: Container(
-                    height: 40.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.0),
-                      border: Border.all(),
-                    ),
+            Container(
+              height: 40.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                border: Border.all(),
+              ),
+              child: TextField(
+                controller: _editingController,
+                decoration: const InputDecoration(
+                  hintText: 'Search',
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: AppColors.primaryColor,
                   ),
+                  border: InputBorder.none,
                 ),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                Container(
-                  height: 40.0,
-                  width: 40.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(),
-                    color: AppColors.searchButtonColor,
-                  ),
-                  child: const Icon(Icons.search),
-                ),
-              ],
+                onChanged: (query) {
+                  _filterSearchResults(query);
+                },
+              ),
             ),
             const SizedBox(
               height: 10.0,
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: catsList.length,
-                itemBuilder: (context, index) {
-                  final catito = catsList[index];
-                  return CatCard(
-                    catito: catito,
-                  );
-                },
-              ),
+              child: ValueListenableBuilder<List<Cat>>(
+                  valueListenable: filteredCats,
+                  builder: (context, value, _) {
+                    return ListView.builder(
+                      itemCount: filteredCats.value.length,
+                      itemBuilder: (context, index) {
+                        final catito = filteredCats.value[index];
+                        return CatCard(
+                          catito: catito,
+                        );
+                      },
+                    );
+                  }),
             ),
           ],
         ),
@@ -101,7 +115,11 @@ class _CatsListScreenState extends State<CatsListScreen> {
             return state.when(
               initial: () => const SizedBox(),
               loading: () => const LoadingScreen(),
-              completed: (catsList) => _buildBody(catsList),
+              completed: (catsList) {
+                allCats = catsList;
+                filteredCats.value = catsList;
+                return _buildBody();
+              },
               error: () => ErrorScreen(
                 buttonText: 'Try Again',
                 onTap: () => _viewModel.add(

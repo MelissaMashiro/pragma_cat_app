@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import '../../domain/entities/cache_exception.dart';
-import '../../domain/entities/server_exception.dart';
 
+import '../../domain/entities/cache_exception.dart';
 import '../../domain/entities/cat.dart';
 import '../../domain/entities/failure.dart';
+import '../../domain/entities/server_exception.dart';
 import '../../domain/repositories/cat_app_repository.dart';
 import '../datasources/local/cat_app_local_datasource.dart';
 import '../datasources/remote/cat_app_remote_datasource.dart';
@@ -26,7 +26,7 @@ class CatAppRepositoryImpl implements CatAppRepository {
   Future<Either<Failure, List<Cat>>> getCatsList() async {
     if (await _networkInfo.isConnected) {
       try {
-        final remoteCatsList = await _catAppRemoteDataSource.getLiveMatched();
+        final remoteCatsList = await _catAppRemoteDataSource.getCatsList();
 
         // ignore: avoid_function_literals_in_foreach_calls
         remoteCatsList.forEach((cat) async {
@@ -47,7 +47,6 @@ class CatAppRepositoryImpl implements CatAppRepository {
     } else {
       try {
         final localCatsList = await _catAppLocalDataSource.getSavedCatsList();
-
         return Right(localCatsList);
       } on CacheException {
         return Left(

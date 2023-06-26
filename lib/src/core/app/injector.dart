@@ -43,7 +43,7 @@ class DefaultInjector implements Injector {
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
   late Config _config;
   late Database _database;
-  late CatsListUseCase _liveMatchsListUseCase;
+  late CatsListUseCase _catsListUseCase;
   bool _initialized = false;
 
   @override
@@ -55,7 +55,7 @@ class DefaultInjector implements Injector {
 
   @override
   CatsListBloc get catsListBloc => CatsListBloc(
-        catsListUseCase: _liveMatchsListUseCase,
+        catsListUseCase: _catsListUseCase,
       );
 
   @override
@@ -103,7 +103,7 @@ class DefaultInjector implements Injector {
         catAppRemoteDataSource: catAppRemoteDataSource,
       );
 
-      _liveMatchsListUseCase = CatsListUseCase(
+      _catsListUseCase = CatsListUseCase(
         catAppRepository: catAppRepository,
       );
 

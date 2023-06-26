@@ -18,13 +18,17 @@ class CatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(
-        context,
-        NamedRoute.catDetails,
-        arguments: {
-          'catDetails': catito,
-        },
-      ),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+
+        Navigator.pushNamed(
+          context,
+          NamedRoute.catDetails,
+          arguments: {
+            'catDetails': catito,
+          },
+        );
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(
           vertical: 5.0,

@@ -15,12 +15,12 @@ class CatsListBloc extends Bloc<CatsListEvent,CatsListState>{
     required CatsListUseCase catsListUseCase,
   })  : _catsListUseCase = catsListUseCase,
         super(const CatsListState.initial()) {
-    on<CatsListStarted>(_getLiveMatchs);
+    on<CatsListStarted>(_getCatsList);
   }
 
   CatsListState get initialState => const CatsListState.initial();
 
-  Future<void> _getLiveMatchs(event, emit) async {
+  Future<void> _getCatsList(event, emit) async {
     emit(const CatsListState.loading());
 
     final result = await _catsListUseCase.call(arguments: {});
