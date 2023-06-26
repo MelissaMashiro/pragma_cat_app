@@ -1,4 +1,4 @@
-package com.example.pragma_cat_app
+package com.meli.cat.app
 
 import io.flutter.embedding.android.FlutterActivity
 

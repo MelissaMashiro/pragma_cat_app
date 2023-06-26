@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/navigation/named_route.dart';
 import '../../../../domain/entities/cat.dart';
+import '../../../ui/app_colors.dart';
 
 class CatCard extends StatelessWidget {
   const CatCard({
@@ -30,7 +31,7 @@ class CatCard extends StatelessWidget {
         ),
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          color: Colors.purpleAccent.withOpacity(0.6),
+          color: AppColors.primaryColor,
           borderRadius: BorderRadius.circular(15.0),
           border: Border.all(
             color: Colors.black,

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../domain/entities/cat.dart';
+import '../../ui/app_colors.dart';
 import 'widgets/cat_info_box.dart';
 
 class CatDetailsScreen extends StatelessWidget {
@@ -61,7 +62,7 @@ class CatDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(cat.name),
-        backgroundColor: Colors.purpleAccent.withOpacity(0.6),
+        backgroundColor: AppColors.primaryColor,
       ),
       body: _buildBody(mq),
     );

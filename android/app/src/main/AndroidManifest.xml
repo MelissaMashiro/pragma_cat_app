@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pragma_cat_app">
+    package="com.meli.cat.app">
    <application
-        android:label="pragma_cat_app"
+        android:label="Cats App"
         android:name="${applicationName}"
+        android:roundIcon="@mipmap/ic_launcher"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
